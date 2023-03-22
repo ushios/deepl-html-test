@@ -20,6 +20,7 @@ $(function () {
   $("#translate").on("click", function () {
     console.log("start to translate");
     const body = $("body").html();
+    console.log(body);
     translate(body).then((data) => {
       console.log(data);
       $("body").html(data.translations[0].text);
