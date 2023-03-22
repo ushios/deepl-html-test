@@ -16,4 +16,4 @@ Install dependencies and execute translate api script.
 $ npm install
 $ node index.js
 ```
-You can get response from DeepL.
+You can get response index.html from DeepL.
