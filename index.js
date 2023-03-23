@@ -5,7 +5,7 @@ const fs = require("fs");
 const URL = "https://api-free.deepl.com/v2/translate"
 
 
-fs.readFile("index.html", "utf-8", (err, data) => {
+fs.readFile("test.html", "utf-8", (err, data) => {
   if (err) throw err;
 
   const headers = {
@@ -16,6 +16,8 @@ fs.readFile("index.html", "utf-8", (err, data) => {
   formData.append("text", data);
   formData.append("target_lang", "EN");
   formData.append("tag_handling", "html");
+  formData.append("ignore_tags", "script,style");
+  formData.append("source_lang", "JA");
 
   const start = Date.now()
   axios.post(URL, formData, { headers }).then((resp) => {
